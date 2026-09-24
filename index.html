@@ -1,0 +1,1773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NYStretch-2020 Residential Energy Code Guide | Climate Zone 6</title>
+  <meta name="description" content="Comprehensive technical guide to NYStretch Energy Code 2020 (2018 IECC Overlay) for Residential Buildings in Climate Zone 6. Envelope R-values, U-factors, HVAC, HRV/ERV, SHW, and EV/Solar requirements.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #0b0f19;
+      --bg-secondary: #111827;
+      --bg-card: #162033;
+      --bg-card-hover: #1c2942;
+      --bg-elevated: #1e293b;
+      --border-subtle: #1e293b;
+      --border-accent: #2563eb;
+      --border-highlight: rgba(56, 189, 248, 0.25);
+      
+      --text-main: #f3f4f6;
+      --text-muted: #94a3b8;
+      --text-faint: #64748b;
+      --text-accent: #38bdf8;
+      
+      --brand-blue: #0284c7;
+      --brand-blue-glow: rgba(2, 132, 199, 0.35);
+      --accent-cyan: #06b6d4;
+      --accent-emerald: #10b981;
+      --accent-amber: #f59e0b;
+      --accent-rose: #f43f5e;
+      --accent-purple: #8b5cf6;
+      
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -4px rgba(0, 0, 0, 0.4);
+      --shadow-glow: 0 0 25px rgba(56, 189, 248, 0.15);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    code, pre, .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Ambient Background Elements */
+    .ambient-glow {
+      position: fixed;
+      top: -200px;
+      right: -200px;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(14, 165, 233, 0.15) 0%, rgba(15, 23, 42, 0) 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .ambient-glow-2 {
+      position: fixed;
+      bottom: -150px;
+      left: -150px;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, rgba(15, 23, 42, 0) 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Top Navigation Bar */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(11, 15, 25, 0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .nav-container {
+      max-width: 1380px;
+      margin: 0 auto;
+      padding: 0.875rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .brand-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+      color: white;
+      font-weight: 800;
+      font-size: 0.85rem;
+      padding: 0.35rem 0.65rem;
+      border-radius: var(--radius-sm);
+      letter-spacing: 0.5px;
+      box-shadow: 0 0 12px rgba(2, 132, 199, 0.5);
+    }
+
+    .brand-title {
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: -0.02em;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-sub {
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 0.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 0.4rem 0.75rem;
+      border-radius: var(--radius-sm);
+      transition: all 0.2s ease;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--text-main);
+      background-color: var(--bg-card);
+    }
+
+    .cz-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(14, 165, 233, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: #38bdf8;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.35rem 0.75rem;
+      border-radius: 9999px;
+    }
+
+    .cz-badge span.pulse-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #38bdf8;
+      box-shadow: 0 0 8px #38bdf8;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      max-width: 1380px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 2rem 1.5rem;
+      z-index: 1;
+    }
+
+    .hero-topline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--accent-cyan);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.1rem, 4vw, 3.2rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #ffffff 30%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 820px;
+      line-height: 1.7;
+      margin-bottom: 1.75rem;
+    }
+
+    .quick-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      padding: 1.25rem;
+      border-radius: var(--radius-lg);
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stat-card:hover {
+      border-color: var(--border-highlight);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .stat-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--stat-color, var(--brand-blue));
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+
+    .stat-value {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--text-main);
+      display: flex;
+      align-items: baseline;
+      gap: 0.35rem;
+    }
+
+    .stat-sub {
+      font-size: 0.78rem;
+      color: var(--text-faint);
+      margin-top: 0.25rem;
+    }
+
+    /* Main Layout */
+    .main-container {
+      max-width: 1380px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem 4rem 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Filter & Search Bar */
+    .toolbar-sticky {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 0.75rem 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .tab-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .tab-pill {
+      background: transparent;
+      border: 1px solid transparent;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.45rem 0.9rem;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .tab-pill:hover {
+      color: var(--text-main);
+      background: var(--bg-card);
+    }
+
+    .tab-pill.active {
+      background: #0284c7;
+      color: #ffffff;
+      border-color: #0284c7;
+      box-shadow: 0 0 12px rgba(2, 132, 199, 0.4);
+    }
+
+    .search-box {
+      position: relative;
+      min-width: 260px;
+    }
+
+    .search-input {
+      width: 100%;
+      background: var(--bg-primary);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-main);
+      padding: 0.45rem 0.85rem 0.45rem 2.2rem;
+      border-radius: var(--radius-md);
+      font-size: 0.82rem;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    .search-input:focus {
+      border-color: var(--accent-cyan);
+      box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.15);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 0.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-faint);
+      pointer-events: none;
+      width: 14px;
+      height: 14px;
+    }
+
+    /* Section Styling */
+    section {
+      margin-bottom: 3.5rem;
+      scroll-margin-top: 5.5rem;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 0.85rem;
+    }
+
+    .section-title-wrap {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .section-code-ref {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.2rem;
+    }
+
+    .section-title {
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+    }
+
+    .badge-mandatory {
+      background: rgba(244, 63, 94, 0.15);
+      border: 1px solid rgba(244, 63, 94, 0.35);
+      color: #fda4af;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.25rem 0.6rem;
+      border-radius: var(--radius-sm);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-cz6-key {
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      color: #fcd34d;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.25rem 0.6rem;
+      border-radius: var(--radius-sm);
+      text-transform: uppercase;
+    }
+
+    /* Cards & Grids */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      transition: all 0.25s ease;
+      position: relative;
+    }
+
+    .card:hover {
+      border-color: var(--border-highlight);
+      box-shadow: var(--shadow-md);
+    }
+
+    .card-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .card-subtitle {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    /* Callout & Alerts */
+    .callout {
+      border-radius: var(--radius-md);
+      padding: 1rem 1.25rem;
+      margin: 1.25rem 0;
+      display: flex;
+      gap: 0.85rem;
+      font-size: 0.88rem;
+      line-height: 1.55;
+    }
+
+    .callout-info {
+      background: rgba(2, 132, 199, 0.12);
+      border-left: 4px solid #0284c7;
+      color: #e0f2fe;
+    }
+
+    .callout-warning {
+      background: rgba(245, 158, 11, 0.12);
+      border-left: 4px solid #f59e0b;
+      color: #fef3c7;
+    }
+
+    .callout-success {
+      background: rgba(16, 185, 129, 0.12);
+      border-left: 4px solid #10b981;
+      color: #d1fae5;
+    }
+
+    .callout-icon {
+      flex-shrink: 0;
+      font-size: 1.2rem;
+      margin-top: -1px;
+    }
+
+    /* High Precision Data Tables */
+    .table-container {
+      overflow-x: auto;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      background: var(--bg-card);
+      margin: 1.25rem 0;
+      box-shadow: var(--shadow-sm);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.86rem;
+    }
+
+    th {
+      background: var(--bg-elevated);
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.74rem;
+      letter-spacing: 0.05em;
+      padding: 0.85rem 1.15rem;
+      border-bottom: 1px solid var(--border-subtle);
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 0.95rem 1.15rem;
+      border-bottom: 1px solid var(--border-subtle);
+      color: var(--text-main);
+      vertical-align: middle;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background-color: rgba(255, 255, 255, 0.02);
+    }
+
+    .table-highlight {
+      font-weight: 700;
+      color: #38bdf8;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.95rem;
+    }
+
+    .table-tag {
+      font-size: 0.72rem;
+      padding: 0.2rem 0.45rem;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.07);
+      color: var(--text-muted);
+      margin-left: 0.4rem;
+      font-weight: 500;
+    }
+
+    .diff-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      margin-top: 0.25rem;
+      background: rgba(245, 158, 11, 0.15);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+
+    /* Comparison Tabs & Toggle */
+    .cz-comparison-toggle {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      padding: 1.25rem;
+      border-radius: var(--radius-lg);
+      margin: 1.5rem 0;
+    }
+
+    /* Checklist & Interactive Tool */
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      padding: 0.85rem;
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-subtle);
+      margin-bottom: 0.5rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .checklist-item:hover {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: var(--border-highlight);
+    }
+
+    .checklist-item.checked {
+      border-color: rgba(16, 185, 129, 0.4);
+      background: rgba(16, 185, 129, 0.06);
+    }
+
+    .checklist-checkbox {
+      width: 18px;
+      height: 18px;
+      border-radius: 4px;
+      border: 2px solid var(--text-faint);
+      margin-top: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all 0.2s ease;
+    }
+
+    .checklist-item.checked .checklist-checkbox {
+      background: #10b981;
+      border-color: #10b981;
+      color: white;
+    }
+
+    .checklist-text {
+      flex: 1;
+    }
+
+    .checklist-title {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .checklist-meta {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.15rem;
+    }
+
+    /* Interactive Pipe Calculator */
+    .calc-card {
+      background: linear-gradient(145deg, #131d2e 0%, #17243b 100%);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      margin-top: 1.25rem;
+    }
+
+    .calc-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      align-items: flex-end;
+      margin-bottom: 1.25rem;
+    }
+
+    .calc-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .calc-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .calc-select, .calc-input {
+      background: var(--bg-primary);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-main);
+      padding: 0.55rem 0.85rem;
+      border-radius: var(--radius-md);
+      font-size: 0.88rem;
+      outline: none;
+    }
+
+    .calc-select:focus, .calc-input:focus {
+      border-color: var(--accent-cyan);
+    }
+
+    .calc-result-box {
+      background: rgba(0, 0, 0, 0.35);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      border: 1px dashed var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .result-badge {
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 0.35rem 0.75rem;
+      border-radius: 9999px;
+    }
+
+    .badge-pass {
+      background: rgba(16, 185, 129, 0.2);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.4);
+    }
+
+    .badge-fail {
+      background: rgba(244, 63, 94, 0.2);
+      color: #fb7185;
+      border: 1px solid rgba(244, 63, 94, 0.4);
+    }
+
+    /* Print styles */
+    @media print {
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
+      }
+      header, .toolbar-sticky, .ambient-glow, .ambient-glow-2, button {
+        display: none !important;
+      }
+      .card, .stat-card, .table-container {
+        border: 1px solid #ccc !important;
+        box-shadow: none !important;
+        background: none !important;
+        color: #000000 !important;
+        page-break-inside: avoid;
+      }
+      th {
+        background: #eee !important;
+        color: #000 !important;
+      }
+      td, .section-title, .card-title {
+        color: #000 !important;
+      }
+      .table-highlight {
+        color: #0284c7 !important;
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      .toolbar-sticky {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .search-box {
+        min-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="ambient-glow"></div>
+  <div class="ambient-glow-2"></div>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="brand">
+        <span class="brand-badge">NYStretch</span>
+        <div class="brand-title">
+          <span>NYStretch Energy Code 2020</span>
+          <span class="brand-sub">Residential Provisions &bull; IECC 2018 Overlay</span>
+        </div>
+      </a>
+      
+      <div class="cz-badge">
+        <span class="pulse-dot"></span>
+        <span>Climate Zone 6 Only</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#compliance-paths">Compliance Paths</a>
+        <a href="#envelope">Envelope &amp; Insulation</a>
+        <a href="#mechanical">HRV/ERV &amp; HVAC</a>
+        <a href="#hot-water">Plumbing &amp; DHW</a>
+        <a href="#electrical">Solar &amp; EV</a>
+        <a href="#passive-house">Passive House</a>
+        <a href="#interactive-tools">Tools</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="hero-topline">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      Official NYSERDA 2020 Standard &bull; Part 3 Residential Summary
+    </div>
+    <h1>Residential Energy Code Guide<br><span style="color: #38bdf8;">Climate Zone 6 (Cold Zone)</span></h1>
+    <p>
+      Complete specification of thermal envelope, mechanical ventilation, duct location, hot water distribution, lighting, solar-ready, and EV-readiness requirements for residential construction under the <strong>NYStretch Energy Code 2020</strong> in <strong>Climate Zone 6</strong> (Upstate, Adirondacks, Northern &amp; Southern Tier NY).
+    </p>
+
+    <!-- Key Metrics Grid -->
+    <div class="quick-stats-grid">
+      <div class="stat-card" style="--stat-color: #38bdf8;">
+        <div class="stat-label">Wood-Framed Wall (CZ6)</div>
+        <div class="stat-value">R-20+5 <span style="font-size: 0.9rem; font-weight: normal; color: var(--text-muted);">or 13+10</span></div>
+        <div class="stat-sub"><strong style="color:#fbbf24;">Continuous insulation mandatory</strong> (No R-21 int-only allowed!)</div>
+      </div>
+
+      <div class="stat-card" style="--stat-color: #10b981;">
+        <div class="stat-label">Whole-House Ventilation</div>
+        <div class="stat-value">HRV / ERV</div>
+        <div class="stat-sub"><strong style="color:#34d399;">Mandatory balanced recovery</strong> for every dwelling unit</div>
+      </div>
+
+      <div class="stat-card" style="--stat-color: #f59e0b;">
+        <div class="stat-label">Maximum Fenestration U-Factor</div>
+        <div class="stat-value">U-0.27</div>
+        <div class="stat-sub">Glazed fenestration SHGC: <em>Not Required</em> in CZ6</div>
+      </div>
+
+      <div class="stat-card" style="--stat-color: #8b5cf6;">
+        <div class="stat-label">Maximum ERI / HERS Index</div>
+        <div class="stat-value">ERI &le; 50</div>
+        <div class="stat-sub">Strict 50 threshold for CZ6 compliance (Table R406.4)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content Container -->
+  <main class="main-container">
+
+    <!-- Interactive Filter Toolbar -->
+    <div class="toolbar-sticky">
+      <div class="tab-pills" id="section-pills">
+        <button class="tab-pill active" onclick="filterView('all')">All Requirements</button>
+        <button class="tab-pill" onclick="filterView('envelope')">Envelope (R &amp; U)</button>
+        <button class="tab-pill" onclick="filterView('mechanical')">HVAC &amp; Ventilation</button>
+        <button class="tab-pill" onclick="filterView('hot-water')">Plumbing &amp; DWHR</button>
+        <button class="tab-pill" onclick="filterView('electrical')">Solar &amp; EVSE</button>
+        <button class="tab-pill" onclick="filterView('passive-house')">Passive House</button>
+      </div>
+      <div class="search-box">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="codeSearch" class="search-input" placeholder="Search parameters (e.g. 'slab', 'HRV', 'ducts')..." oninput="liveSearch()">
+      </div>
+    </div>
+
+    <!-- SECTION 1: COMPLIANCE PATHS -->
+    <section id="compliance-paths" class="guide-section" data-cat="compliance">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-code-ref">NYStretch Section 3.1 &bull; R401.2</span>
+          <h2 class="section-title">Residential Compliance Paths in Climate Zone 6</h2>
+        </div>
+        <span class="badge-mandatory">Mandatory Selection</span>
+      </div>
+
+      <p style="color: var(--text-muted); margin-bottom: 1.25rem;">
+        Under NYStretch-2020 Section R401.2, projects shall achieve code approval by qualifying under one of the <strong>four recognized compliance pathways</strong>:
+      </p>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-title">
+            <span>1. Prescriptive Path</span>
+            <span class="table-tag">R401 – R404</span>
+          </div>
+          <p class="card-subtitle">Direct component-by-component adherence to tables &amp; mandatory rules.</p>
+          <ul style="color: var(--text-muted); padding-left: 1.2rem; font-size: 0.88rem; line-height: 1.7;">
+            <li>Must comply with all prescriptive insulation values in <strong>Table R402.1.2</strong> or assembly U-factors in <strong>Table R402.1.4</strong>.</li>
+            <li>Ducts strictly in conditioned space (<span class="font-mono">R403.3</span>).</li>
+            <li>Mandatory balanced <strong>HRV/ERV</strong> for every dwelling (<span class="font-mono">R403.6.2</span>).</li>
+            <li>Mandatory <strong>Drain Water Heat Recovery</strong> and pipe length/volume controls (<span class="font-mono">R403.5.5</span>).</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <span>2. Energy Rating Index (ERI)</span>
+            <span class="table-tag">R406</span>
+          </div>
+          <p class="card-subtitle">Performance simulation index path (e.g., RESNET HERS).</p>
+          <ul style="color: var(--text-muted); padding-left: 1.2rem; font-size: 0.88rem; line-height: 1.7;">
+            <li><strong>Maximum ERI Score: 50</strong> for Climate Zone 6 (Table R406.4).</li>
+            <li>Must meet all mandatory requirements of Sections R401 through R404.</li>
+            <li><strong>Renewable Energy Backstop:</strong> When on-site renewable energy is credited, the thermal envelope must not be compromised below 2015 IECC Table R402.1.2/R402.1.4 levels.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <span>3. Simulated Performance</span>
+            <span class="table-tag">R405 (R-2, R-3, R-4)</span>
+          </div>
+          <p class="card-subtitle">Whole-building annual energy cost budget trade-off approach.</p>
+          <ul style="color: var(--text-muted); padding-left: 1.2rem; font-size: 0.88rem; line-height: 1.7;">
+            <li>Applies to Group R-2, Group R-3, and Group R-4 buildings.</li>
+            <li><strong>Stringency requirement:</strong> Proposed building energy cost must be <strong>&le; 80% of standard reference design</strong> (a mandatory 20% cost reduction over base code!).</li>
+            <li>Must satisfy all provisions of Sections R401 through R404 labeled <em>"Mandatory"</em>.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <span>4. Passive House Path</span>
+            <span class="table-tag">R408 (New Option)</span>
+          </div>
+          <p class="card-subtitle">Streamlined compliance via PHIUS+ or PHI certification.</p>
+          <ul style="color: var(--text-muted); padding-left: 1.2rem; font-size: 0.88rem; line-height: 1.7;">
+            <li>Certified under <strong>PHIUS+ 2015</strong> (demand &le; 9 kBTU/ft²/yr, air leakage &le; 0.05 CFM50/ft²) or <strong>PHI</strong> (demand &le; 9.5 kBTU/ft²/yr, ACH50 &le; 1.0).</li>
+            <li>Requires CPHC (Certified Passive House Consultant) pre-construction plans and verified final occupancy report.</li>
+            <li>Automatically satisfies envelope and energy requirements.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: ENVELOPE REQUIREMENTS (CLIMATE ZONE 6) -->
+    <section id="envelope" class="guide-section" data-cat="envelope">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-code-ref">NYStretch Sections 3.2 – 3.5 &bull; Tables R402.1.2 &amp; R402.1.4</span>
+          <h2 class="section-title">Envelope Insulation &amp; Fenestration (Climate Zone 6)</h2>
+        </div>
+        <span class="badge-cz6-key">CZ6 Specific Values</span>
+      </div>
+
+      <div class="callout callout-warning">
+        <div class="callout-icon">&#9888;</div>
+        <div>
+          <strong>Crucial Climate Zone 6 Wood-Framing Difference:</strong>
+          In Climate Zones 4 and 5, NYStretch permits a single-cavity insulation option (<em>"R-21 int."</em>).
+          <strong>In Climate Zone 6, single cavity insulation without continuous exterior insulation is PROHIBITED.</strong>
+          You must specify either <strong>R-20 cavity + R-5 continuous</strong> (20+5) OR <strong>R-13 cavity + R-10 continuous</strong> (13+10).
+        </div>
+      </div>
+
+      <!-- Envelope Table -->
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Building Component</th>
+              <th>Prescriptive Minimum R-Value (Table R402.1.2)</th>
+              <th>Equivalent Max U-Factor (Table R402.1.4)</th>
+              <th>Technical Notes &amp; Implementation Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Fenestration (Glazing)</strong></td>
+              <td class="table-highlight">U-0.27 max</td>
+              <td class="table-highlight">U-0.27</td>
+              <td>Excludes skylights. Must be NFRC rated and labeled.</td>
+            </tr>
+            <tr>
+              <td><strong>Glazed Fenestration SHGC</strong></td>
+              <td class="table-highlight" style="color: #a78bfa;">NR (Not Required)</td>
+              <td>—</td>
+              <td>In CZ6 cold climates, solar heat gain is beneficial for passive heating; no maximum SHGC cap.</td>
+            </tr>
+            <tr>
+              <td><strong>Skylights</strong></td>
+              <td class="table-highlight">U-0.50 max</td>
+              <td class="table-highlight">U-0.50</td>
+              <td>Rated in accordance with NFRC.</td>
+            </tr>
+            <tr>
+              <td><strong>Ceilings / Attics</strong></td>
+              <td class="table-highlight">R-49</td>
+              <td class="table-highlight">U-0.026</td>
+              <td>
+                Must maintain full thickness over top plates. See Section R402.2.2 for unvented or low-slope exceptions.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Wood-Framed Exterior Walls</strong></td>
+              <td class="table-highlight" style="color:#fbbf24;">R-20 + 5 ci &nbsp;or&nbsp; R-13 + 10 ci</td>
+              <td class="table-highlight">U-0.045</td>
+              <td>
+                Headers must have &ge; R-10 insulation. First number = cavity; second number = continuous exterior insulation (ci).
+                <div class="diff-badge">CZ6 strictly requires continuous insulation</div>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Mass Walls</strong></td>
+              <td class="table-highlight">R-15 / 20</td>
+              <td class="table-highlight">U-0.056</td>
+              <td>Per Section R402.2.5. Second value (R-20) applies when &gt; 50% of insulation is installed on the interior side.</td>
+            </tr>
+            <tr>
+              <td><strong>Floors over Unconditioned Space</strong></td>
+              <td class="table-highlight">R-30</td>
+              <td class="table-highlight">U-0.033</td>
+              <td>Alternatively, insulation sufficient to completely fill the framing cavity and providing not less than R-19.</td>
+            </tr>
+            <tr>
+              <td><strong>Basement Walls</strong></td>
+              <td class="table-highlight">R-15 ci &nbsp;or&nbsp; R-19 cavity</td>
+              <td class="table-highlight">U-0.050</td>
+              <td>R-15 continuous insulation on interior/exterior OR R-19 cavity insulation on interior of basement wall.</td>
+            </tr>
+            <tr>
+              <td><strong>Slab-on-Grade (Unheated)</strong></td>
+              <td class="table-highlight">R-10 (4 ft depth)</td>
+              <td>F-factor method</td>
+              <td>Insulation must extend downward from top of slab 4 feet or downward and horizontally under slab 4 feet.</td>
+            </tr>
+            <tr>
+              <td><strong>Heated Slabs</strong></td>
+              <td class="table-highlight">R-10 perimeter + R-10 full under-slab</td>
+              <td>F-factor method</td>
+              <td><strong>Mandatory R-10 continuous</strong> under entire heated slab area plus R-10 slab edge insulation (Table R402.1.2 Note f).</td>
+            </tr>
+            <tr>
+              <td><strong>Crawl Space Walls</strong></td>
+              <td class="table-highlight">R-15 ci &nbsp;or&nbsp; R-19 cavity</td>
+              <td class="table-highlight">U-0.042</td>
+              <td>Applies to unvented crawl spaces conditioned as part of building envelope.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Specific Envelope Subsections -->
+      <div class="grid-2" style="margin-top: 1.5rem;">
+        <div class="card">
+          <div class="card-title">
+            <span>Ceilings Without Attic Spaces</span>
+            <span class="table-tag">R402.2.2</span>
+          </div>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">
+            Where Table R402.1.2 requires insulation &gt; R-38 (CZ6 requires R-49) and structural roof/ceiling design does not allow adequate clearance:
+          </p>
+          <ul style="color: var(--text-muted); padding-left: 1.2rem; font-size: 0.85rem; margin-top: 0.6rem; line-height: 1.6;">
+            <li>Minimum allowed insulation: <strong>R-38</strong>.</li>
+            <li>Must extend over the exterior wall top plate without compression.</li>
+            <li><strong>Strict Area Cap:</strong> Limited to <strong>500 sq ft (46 m²)</strong> or <strong>20% of total insulated ceiling area</strong>, whichever is less.</li>
+            <li><em>Does NOT apply</em> to the U-factor or Total UA trade-off alternative methods.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <span>Mandatory Open-Wall Air Barrier &amp; Insulation Inspection</span>
+            <span class="table-tag">R402.4.1.1</span>
+          </div>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">
+            Strict visual quality installation protocol before drywall enclosure:
+          </p>
+          <ul style="color: var(--text-muted); padding-left: 1.2rem; font-size: 0.85rem; margin-top: 0.6rem; line-height: 1.6;">
+            <li>Third-party verification: An approved inspection agency must verify all thermal envelope assemblies.</li>
+            <li>Cavity fill: Insulation must uniformly fill cavities side-to-side and top-to-bottom without substantial voids or bundling.</li>
+            <li>Wiring &amp; plumbing: Batt insulation must be split around wiring and piping.</li>
+            <li><strong>2% Compression Rule:</strong> No more than <strong>2 percent</strong> of the total insulated area may be compressed below the rated thickness.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: MECHANICAL & VENTILATION (CZ6 FOCUS) -->
+    <section id="mechanical" class="guide-section" data-cat="mechanical">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-code-ref">NYStretch Sections 3.6, 3.7, 3.11, 3.12 &bull; R403.3 &amp; R403.6</span>
+          <h2 class="section-title">Mechanical, Ductwork &amp; Ventilation Requirements</h2>
+        </div>
+        <span class="badge-mandatory">Mandatory in CZ6</span>
+      </div>
+
+      <div class="grid-3">
+        <!-- Card 1: HRV/ERV -->
+        <div class="card" style="border-top: 3px solid #10b981;">
+          <div class="card-title">
+            <span>HRV / ERV Mandatory</span>
+            <span class="table-tag">R403.6.2</span>
+          </div>
+          <p class="card-subtitle">Every dwelling unit in CZ6 must have heat or energy recovery.</p>
+          <p style="font-size: 0.86rem; color: var(--text-muted); line-height: 1.6;">
+            In new construction, <strong>every dwelling unit must be served by a balanced Heat Recovery Ventilator (HRV) or Energy Recovery Ventilator (ERV)</strong> sized for conditioned floor area and occupancy.
+          </p>
+          <div class="callout callout-warning" style="margin-top: 0.75rem; padding: 0.75rem;">
+            <div style="font-size: 0.78rem;">
+              <strong>Note on CZ4 Exception:</strong> The exception permitting central furnace blower outdoor air intake is <strong>only allowed in Climate Zone 4</strong>. In Climate Zone 6, a true balanced HRV or ERV is non-negotiable!
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Ducts in Conditioned Space -->
+        <div class="card" style="border-top: 3px solid #38bdf8;">
+          <div class="card-title">
+            <span>Ducts in Conditioned Space</span>
+            <span class="table-tag">R403.3</span>
+          </div>
+          <p class="card-subtitle">Zero thermal penalty inside unconditioned attics.</p>
+          <p style="font-size: 0.86rem; color: var(--text-muted); line-height: 1.6;">
+            The entire duct system and air handlers in new buildings and additions <strong>shall be located completely inside conditioned space</strong> in accordance with Sections R403.3.7(1) and (2).
+          </p>
+          <ul style="color: var(--text-muted); padding-left: 1.2rem; font-size: 0.82rem; margin-top: 0.5rem; line-height: 1.5;">
+            <li>Eliminates massive seasonal duct leakage losses in vented attics.</li>
+            <li>Permitted inside conditioned basements, drop ceilings, open web floor trusses, or unvented conditioned attics.</li>
+          </ul>
+        </div>
+
+        <!-- Card 3: Duct Sizing & Testing -->
+        <div class="card" style="border-top: 3px solid #8b5cf6;">
+          <div class="card-title">
+            <span>ACCA Manual D &amp; Verification</span>
+            <span class="table-tag">R403.3.8 &amp; R403.6.3</span>
+          </div>
+          <p class="card-subtitle">Engineered airflow sizing and independent flow-hood testing.</p>
+          <p style="font-size: 0.86rem; color: var(--text-muted); line-height: 1.6;">
+            <strong>Mandatory Duct Sizing:</strong> All duct distribution systems must be engineered per <strong>ACCA Manual D</strong> based on ACCA Manual J (heating/cooling loads) and Manual S (equipment selection).
+          </p>
+          <p style="font-size: 0.86rem; color: var(--text-muted); margin-top: 0.6rem; line-height: 1.6;">
+            <strong>Field Flow Testing:</strong> Mechanical ventilation airflows must be tested and verified with a flow hood or flow grid by an approved agency in accordance with <strong>ANSI/ACCA 9QIvp-2016</strong>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: SERVICE HOT WATER & PLUMBING -->
+    <section id="hot-water" class="guide-section" data-cat="hot-water">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-code-ref">NYStretch Sections 3.8 – 3.10 &bull; R403.5</span>
+          <h2 class="section-title">Plumbing &amp; Service Hot Water (SHW) Efficiency</h2>
+        </div>
+        <span class="badge-mandatory">Mandatory</span>
+      </div>
+
+      <div class="grid-2">
+        <!-- DWHR Card -->
+        <div class="card">
+          <div class="card-title">
+            <span>Drain Water Heat Recovery (DWHR)</span>
+            <span class="table-tag">R403.5.4 &amp; R403.5.5.3</span>
+          </div>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">
+            New residential buildings <strong>shall include a drain water heat recovery unit</strong> that captures heat from <strong>at least one shower</strong>.
+          </p>
+          <div class="table-container" style="margin: 0.75rem 0;">
+            <table>
+              <thead>
+                <tr>
+                  <th>Configuration</th>
+                  <th>Minimum Efficiency</th>
+                  <th>Governing Standards</th>
+                  <th>Max Water-Side Pressure Loss</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Equal Flow</strong></td>
+                  <td class="table-highlight">&ge; 40%</td>
+                  <td>CSA B55.1 / CSA B55.2 / IAPMO 346</td>
+                  <td rowspan="2">
+                    &lt; 3 psi (1–2 showers)<br>
+                    &lt; 2 psi (3+ showers)
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Unequal Flow</strong></td>
+                  <td class="table-highlight">&ge; 52%</td>
+                  <td>IAPMO PS 92 / IAPMO 346 (sloped units)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Recirculation Card -->
+        <div class="card">
+          <div class="card-title">
+            <span>Hot Water Recirculation Limits</span>
+            <span class="table-tag">R403.5.5.4</span>
+          </div>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">
+            Where continuous or demand hot water circulation loops are employed:
+          </p>
+          <ul style="color: var(--text-muted); padding-left: 1.2rem; font-size: 0.85rem; margin-top: 0.6rem; line-height: 1.6;">
+            <li><strong>Storage Volume Ceiling:</strong> Maximum allowable storage between the recirculation loop tee and any fixture is <strong>0.5 gallons (1.9 liters)</strong>.</li>
+            <li><strong>Demand Activation:</strong> Recirculation systems must be triggered by an <strong>occupant-controlled push-button switch or occupancy sensor</strong> installed in each bathroom located beyond a 0.5-gallon volume from the water heater.</li>
+            <li>Continuous gravity circulation loops or uncontrolled timers are prohibited.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Pipe Length & Volume Limits -->
+      <div class="card" style="margin-top: 1.25rem;">
+        <div class="card-title">
+          <span>Supply of Heated Water &bull; Maximum Pipe Length &amp; Volume Limits</span>
+          <span class="table-tag">Table R403.5.5.1</span>
+        </div>
+        <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 0.75rem;">
+          To eliminate energy and water waste while waiting for hot water, all domestic piping in new residential dwellings must comply with either the <strong>Maximum Pipe Length Method</strong> or <strong>Maximum Water Volume Method</strong> (max 64 oz from heater, max 24 oz from loop, max 2 oz for public lavatories).
+        </p>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Nominal Pipe/Tube Size</th>
+                <th>Internal Volume (oz / linear ft)</th>
+                <th>Max Pipe Length: No Loop / Heat-Trace</th>
+                <th>Max Pipe Length: With Loop / Trace</th>
+                <th>Max Length: Public Lavatories</th>
+                <th>Maximum Flow Limit</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1/4"</strong></td>
+                <td>0.33 oz/ft</td>
+                <td class="table-highlight">50 ft</td>
+                <td>16 ft</td>
+                <td>6 ft</td>
+                <td>0.5 gpm</td>
+              </tr>
+              <tr>
+                <td><strong>5/16"</strong></td>
+                <td>0.50 oz/ft</td>
+                <td class="table-highlight">50 ft</td>
+                <td>16 ft</td>
+                <td>4 ft</td>
+                <td>1.0 gpm</td>
+              </tr>
+              <tr>
+                <td><strong>3/8"</strong></td>
+                <td>0.75 oz/ft</td>
+                <td class="table-highlight">50 ft</td>
+                <td>16 ft</td>
+                <td>3 ft</td>
+                <td>1.5 gpm</td>
+              </tr>
+              <tr>
+                <td><strong>1/2"</strong></td>
+                <td>1.50 oz/ft</td>
+                <td class="table-highlight" style="color: #38bdf8;">43 ft</td>
+                <td class="table-highlight">16 ft</td>
+                <td>2 ft</td>
+                <td>Standard</td>
+              </tr>
+              <tr>
+                <td><strong>5/8"</strong></td>
+                <td>2.00 oz/ft</td>
+                <td class="table-highlight">32 ft</td>
+                <td>12 ft</td>
+                <td>1 ft</td>
+                <td>Standard</td>
+              </tr>
+              <tr>
+                <td><strong>3/4"</strong></td>
+                <td>3.00 oz/ft</td>
+                <td class="table-highlight" style="color: #f59e0b;">21 ft</td>
+                <td class="table-highlight">8 ft</td>
+                <td>0.5 ft</td>
+                <td>Standard</td>
+              </tr>
+              <tr>
+                <td><strong>7/8"</strong></td>
+                <td>4.00 oz/ft</td>
+                <td class="table-highlight">16 ft</td>
+                <td>6 ft</td>
+                <td>0.5 ft</td>
+                <td>Standard</td>
+              </tr>
+              <tr>
+                <td><strong>1"</strong></td>
+                <td>5.00 oz/ft</td>
+                <td class="table-highlight">13 ft</td>
+                <td>5 ft</td>
+                <td>0.5 ft</td>
+                <td>Standard</td>
+              </tr>
+              <tr>
+                <td><strong>1-1/4"</strong></td>
+                <td>8.00 oz/ft</td>
+                <td class="table-highlight">8 ft</td>
+                <td>3 ft</td>
+                <td>0.5 ft</td>
+                <td>Standard</td>
+              </tr>
+              <tr>
+                <td><strong>1-1/2"</strong></td>
+                <td>11.00 oz/ft</td>
+                <td class="table-highlight">6 ft</td>
+                <td>2 ft</td>
+                <td>0.5 ft</td>
+                <td>Standard</td>
+              </tr>
+              <tr>
+                <td><strong>2" or larger</strong></td>
+                <td>18.00 oz/ft</td>
+                <td class="table-highlight">4 ft</td>
+                <td>1 ft</td>
+                <td>0.5 ft</td>
+                <td>Standard</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: ELECTRICAL, LIGHTING, EV & SOLAR -->
+    <section id="electrical" class="guide-section" data-cat="electrical">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-code-ref">NYStretch Sections 3.13 – 3.14 &bull; R404.1 &amp; R404.2</span>
+          <h2 class="section-title">Electrical, High-Efficacy Lighting, Solar-Ready &amp; EVSE</h2>
+        </div>
+        <span class="badge-mandatory">Mandatory</span>
+      </div>
+
+      <div class="grid-3">
+        <!-- Lighting Equipment -->
+        <div class="card">
+          <div class="card-title">
+            <span>High-Efficacy Lighting</span>
+            <span class="table-tag">R404.1</span>
+          </div>
+          <p style="font-size: 0.86rem; color: var(--text-muted); line-height: 1.6;">
+            <strong>&ge; 90% of permanently installed fixtures</strong> must utilize lamps or luminaires satisfying one of:
+          </p>
+          <ul style="color: var(--text-muted); padding-left: 1.2rem; font-size: 0.85rem; margin-top: 0.5rem; line-height: 1.6;">
+            <li>Lamps with efficacy &ge; <strong>65 lumens per watt</strong>, OR</li>
+            <li>Total luminaire efficacy &ge; <strong>45 lumens per watt</strong>.</li>
+            <li><strong>Fuel Gas Lighting (<span class="font-mono">R404.1.1</span>):</strong> Permanently installed fuel-gas lighting shall NOT have continuously burning pilot lights.</li>
+          </ul>
+        </div>
+
+        <!-- Solar-Ready Zone -->
+        <div class="card">
+          <div class="card-title">
+            <span>Solar-Ready Zone</span>
+            <span class="table-tag">R404.2 #1</span>
+          </div>
+          <p style="font-size: 0.86rem; color: var(--text-muted); line-height: 1.6;">
+            Mandatory for new detached one- and two-family dwellings and townhouses where the conditioned space is <strong>greater than 1,400 sq ft (130 m²)</strong>.
+          </p>
+          <ul style="color: var(--text-muted); padding-left: 1.2rem; font-size: 0.85rem; margin-top: 0.5rem; line-height: 1.6;">
+            <li>Must comply with the provisions of <strong>Appendix RA</strong>.</li>
+            <li>Requires a designated solar zone on roof/site free from vents, pipes, and obstructions oriented south for future PV/solar thermal.</li>
+            <li>Electrical panel must provide reserved space for dual-pole solar breakers.</li>
+          </ul>
+        </div>
+
+        <!-- EVSE Ready -->
+        <div class="card">
+          <div class="card-title">
+            <span>EV Charging Capable</span>
+            <span class="table-tag">R404.2 #2</span>
+          </div>
+          <p style="font-size: 0.86rem; color: var(--text-muted); line-height: 1.6;">
+            Mandatory infrastructure for on-site parking spaces:
+          </p>
+          <ul style="color: var(--text-muted); padding-left: 1.2rem; font-size: 0.85rem; margin-top: 0.5rem; line-height: 1.6;">
+            <li><strong>Single &amp; 2-Family &amp; Townhouses:</strong> Provide a dedicated <strong>208/240V 40-amp outlet</strong> for each dwelling unit OR panel capacity + capped conduit terminating adjacent to parking.</li>
+            <li><strong>Common Parking Areas:</strong> Provide 208/240V 40-amp outlets (or panel capacity + conduit) for <strong>5% of total spaces, min 1 space</strong>.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: PASSIVE HOUSE PROTOCOL -->
+    <section id="passive-house" class="guide-section" data-cat="passive-house">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-code-ref">NYStretch Section 3.16 &bull; Section R408</span>
+          <h2 class="section-title">Passive House Compliance Option (PHIUS+ &amp; PHI)</h2>
+        </div>
+        <span class="table-tag" style="background: rgba(16, 185, 129, 0.15); color: #34d399; font-weight:700;">Deemed to Satisfy</span>
+      </div>
+
+      <p style="color: var(--text-muted); margin-bottom: 1.25rem;">
+        NYStretch adds Section R408, providing an explicit alternative compliance avenue for certified Passive House buildings. Qualifying projects satisfy envelope, mechanical, and energy requirements when verified under either recognized standard:
+      </p>
+
+      <div class="grid-2">
+        <div class="card" style="border-left: 4px solid #0284c7;">
+          <div class="card-title">
+            <span>PHIUS+ (Passive House Institute US)</span>
+            <span class="table-tag">R408.1.1</span>
+          </div>
+          <p class="card-subtitle">PHIUS+ 2015: Passive Building Standard – North America</p>
+          <ul style="color: var(--text-muted); padding-left: 1.2rem; font-size: 0.88rem; line-height: 1.7;">
+            <li><strong>Specific Space Heat &amp; Cooling Demand:</strong> Less than or equal to <strong>9.0 kBTU/ft²/year</strong> (sensible only cooling).</li>
+            <li><strong>Blower Door Air Leakage:</strong> Must exhibit no more than <strong>0.05 CFM50/ft²</strong> or <strong>0.08 CFM75/ft²</strong>.</li>
+            <li><strong>Consultant Role:</strong> Modeled and field-verified by a Certified Passive House Consultant (CPHC).</li>
+          </ul>
+        </div>
+
+        <div class="card" style="border-left: 4px solid #8b5cf6;">
+          <div class="card-title">
+            <span>PHI (Passive House Institute)</span>
+            <span class="table-tag">R408.1.2</span>
+          </div>
+          <p class="card-subtitle">PHI 2016: Low Energy Building Standard, Version 9f</p>
+          <ul style="color: var(--text-muted); padding-left: 1.2rem; font-size: 0.88rem; line-height: 1.7;">
+            <li><strong>Specific Heating &amp; Cooling Demand:</strong> Less than or equal to <strong>9.5 kBTU/ft²/year</strong> (sensible only cooling).</li>
+            <li><strong>Blower Door Air Leakage:</strong> Infiltration rate of no more than <strong>1.0 ACH at 50 Pascals</strong> (1.0 ACH50).</li>
+            <li><strong>Consultant Role:</strong> Modeled and field-verified by a Certified Passive House Consultant (CPHC).</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top: 1.25rem;">
+        <div class="card-title">
+          <span>Required Submittal &amp; Permitting Documentation (R408.2)</span>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-top: 0.5rem;">
+          <div style="background: rgba(255,255,255,0.02); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+            <strong style="color: #38bdf8; display: block; margin-bottom: 0.35rem;">Phase 1: Prior to Building Permit Issuance</strong>
+            <p style="font-size: 0.84rem; color: var(--text-muted); line-height: 1.5;">
+              1. Detailed list of compliance features.<br>
+              2. Formal signed statement certifying estimated Specific Space Heat Demand is "based on plans".
+            </p>
+          </div>
+          <div style="background: rgba(255,255,255,0.02); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+            <strong style="color: #10b981; display: block; margin-bottom: 0.35rem;">Phase 2: Prior to Certificate of Occupancy</strong>
+            <p style="font-size: 0.84rem; color: var(--text-muted); line-height: 1.5;">
+              Copy of official final report on approved form documenting completed building achieves verified specific space heat demand &le; 9 kBTU/ft²/yr (PHIUS) or &le; 9.5 kBTU/ft²/yr (PHI) verified by CPHC.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: INTERACTIVE TOOLS & CZ6 VERIFIER -->
+    <section id="interactive-tools" class="guide-section" data-cat="tools">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-code-ref">Interactive Compliance Assistants</span>
+          <h2 class="section-title">Design Checkers &amp; Verification Tools</h2>
+        </div>
+        <span class="badge-cz6-key">CZ6 Field Utilities</span>
+      </div>
+
+      <div class="grid-2">
+        <!-- Tool 1: Pipe Length & Volume Checker -->
+        <div class="calc-card">
+          <h3 style="font-size: 1.15rem; font-weight: 700; color: #ffffff; margin-bottom: 0.35rem;">
+            DHW Maximum Pipe Run Verifier
+          </h3>
+          <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+            Check compliance with NYStretch Table R403.5.5.1 maximum allowable pipe run from hot water source to fixture.
+          </p>
+
+          <div class="calc-row">
+            <div class="calc-group">
+              <label class="calc-label" for="pipeSize">Nominal Pipe Size</label>
+              <select id="pipeSize" class="calc-select" onchange="runPipeCalc()">
+                <option value="0.25">1/4" (0.33 oz/ft)</option>
+                <option value="0.3125">5/16" (0.50 oz/ft)</option>
+                <option value="0.375">3/8" (0.75 oz/ft)</option>
+                <option value="0.5" selected>1/2" (1.50 oz/ft)</option>
+                <option value="0.625">5/8" (2.00 oz/ft)</option>
+                <option value="0.75">3/4" (3.00 oz/ft)</option>
+                <option value="0.875">7/8" (4.00 oz/ft)</option>
+                <option value="1.0">1" (5.00 oz/ft)</option>
+                <option value="1.25">1-1/4" (8.00 oz/ft)</option>
+                <option value="1.5">1-1/2" (11.00 oz/ft)</option>
+                <option value="2.0">2" or larger (18.00 oz/ft)</option>
+              </select>
+            </div>
+
+            <div class="calc-group">
+              <label class="calc-label" for="pipeConfig">System Type</label>
+              <select id="pipeConfig" class="calc-select" onchange="runPipeCalc()">
+                <option value="noLoop" selected>Without Circulation Loop / Heat-Trace</option>
+                <option value="loop">With Circulation Loop / Heat-Trace</option>
+                <option value="public">Lavatory Faucet (Public)</option>
+              </select>
+            </div>
+
+            <div class="calc-group">
+              <label class="calc-label" for="actualLength">Design Run (Feet)</label>
+              <input type="number" id="actualLength" class="calc-input" value="38" min="1" max="100" oninput="runPipeCalc()">
+            </div>
+          </div>
+
+          <div class="calc-result-box" id="pipeResultBox">
+            <div>
+              <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Max Code Allowed Length</div>
+              <div style="font-size: 1.4rem; font-weight: 800; color: #38bdf8;" id="maxAllowedDisplay">43 feet</div>
+            </div>
+            <div>
+              <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Internal Water Volume</div>
+              <div style="font-size: 1.4rem; font-weight: 800; color: #ffffff;" id="pipeVolDisplay">57.0 oz</div>
+            </div>
+            <div>
+              <span id="pipeStatusBadge" class="result-badge badge-pass">&check; COMPLIANT (within 43 ft)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tool 2: CZ6 Residential Checklist -->
+        <div class="card">
+          <div class="card-title">
+            <span>CZ6 Mandatory Plan Review Checklist</span>
+            <button onclick="resetChecklist()" style="background: none; border: 1px solid var(--border-subtle); color: var(--text-muted); padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.72rem; cursor: pointer;">Reset</button>
+          </div>
+          <p class="card-subtitle">Click items to mark verified for construction document signoff:</p>
+
+          <div id="checklist-container">
+            <div class="checklist-item" onclick="toggleCheck(this)">
+              <div class="checklist-checkbox">&check;</div>
+              <div class="checklist-text">
+                <div class="checklist-title">Exterior Wall Continuous Insulation Spec (20+5 or 13+10)</div>
+                <div class="checklist-meta">Table R402.1.2 &bull; Cavity-only insulation is NOT permitted in CZ6.</div>
+              </div>
+            </div>
+
+            <div class="checklist-item" onclick="toggleCheck(this)">
+              <div class="checklist-checkbox">&check;</div>
+              <div class="checklist-text">
+                <div class="checklist-title">Glazing U-Factor &le; 0.27 (SHGC is Not Required)</div>
+                <div class="checklist-meta">Table R402.1.2 &bull; Skylights &le; 0.50. NFRC certified labels.</div>
+              </div>
+            </div>
+
+            <div class="checklist-item" onclick="toggleCheck(this)">
+              <div class="checklist-checkbox">&check;</div>
+              <div class="checklist-text">
+                <div class="checklist-title">Ductwork &amp; Air Handlers 100% Inside Conditioned Space</div>
+                <div class="checklist-meta">Section R403.3 &bull; No unconditioned attic installations.</div>
+              </div>
+            </div>
+
+            <div class="checklist-item" onclick="toggleCheck(this)">
+              <div class="checklist-checkbox">&check;</div>
+              <div class="checklist-text">
+                <div class="checklist-title">Balanced Mechanical Ventilation with HRV or ERV</div>
+                <div class="checklist-meta">Section R403.6.2 &bull; Mandatory for every dwelling; CZ4 exception does not apply.</div>
+              </div>
+            </div>
+
+            <div class="checklist-item" onclick="toggleCheck(this)">
+              <div class="checklist-checkbox">&check;</div>
+              <div class="checklist-text">
+                <div class="checklist-title">Drain Water Heat Recovery (DWHR) on at least 1 Shower</div>
+                <div class="checklist-meta">Section R403.5.5.3 &bull; &ge; 40% equal flow or &ge; 52% unequal flow.</div>
+              </div>
+            </div>
+
+            <div class="checklist-item" onclick="toggleCheck(this)">
+              <div class="checklist-checkbox">&check;</div>
+              <div class="checklist-text">
+                <div class="checklist-title">Solar-Ready Zone (Homes &gt; 1,400 sq ft) + EVSE Capable 240V Outlet</div>
+                <div class="checklist-meta">Section R404.2 &bull; Appendix RA compliance &amp; 40A EV outlet/conduit.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: COMMERCIAL MULTIFAMILY COMPARISON NOTE -->
+    <section id="commercial-note" class="guide-section" data-cat="envelope">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-code-ref">Code Scope Boundary &bull; Commercial Chapter C402 Group R in CZ6</span>
+          <h2 class="section-title">Multifamily Group R &gt; 3 Stories (Commercial Code Overlap)</h2>
+        </div>
+        <span class="table-tag">Commercial Part 1</span>
+      </div>
+
+      <div class="card" style="background: rgba(17, 24, 39, 0.7);">
+        <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1rem;">
+          In New York energy code law, residential buildings <strong>3 stories or less in height</strong> follow <strong>Part 3 (Residential Provisions / IECC-R)</strong> detailed above. When a residential building is <strong>greater than 3 stories</strong> (such as mid-rise / high-rise apartments, student dorms, hotels), it is governed by <strong>Part 1 Commercial Provisions under "Group R"</strong>:
+        </p>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Commercial Group R Component (CZ6)</th>
+                <th>Prescriptive U-Factor (Table C402.1.4)</th>
+                <th>Appendix CB Minimum R-Value (Table CB102.2)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Roof: Insulation Entirely Above Deck</strong></td>
+                <td class="table-highlight">U-0.029</td>
+                <td>R-33 continuous (R-33ci)</td>
+              </tr>
+              <tr>
+                <td><strong>Roof: Attic and Other</strong></td>
+                <td class="table-highlight">U-0.019</td>
+                <td>R-53</td>
+              </tr>
+              <tr>
+                <td><strong>Above-Grade Wall: Wood-Framed</strong></td>
+                <td class="table-highlight">U-0.046</td>
+                <td>R-13 + R-9.5ci &nbsp;or&nbsp; R-19 + R-6ci</td>
+              </tr>
+              <tr>
+                <td><strong>Above-Grade Wall: Steel-Framed</strong></td>
+                <td class="table-highlight">U-0.044</td>
+                <td>R-13 + R-14.5ci</td>
+              </tr>
+              <tr>
+                <td><strong>Above-Grade Wall: Mass Wall</strong></td>
+                <td class="table-highlight">U-0.067</td>
+                <td>R-15.2 continuous (R-15.2ci)</td>
+              </tr>
+              <tr>
+                <td><strong>Below-Grade Wall</strong></td>
+                <td class="table-highlight">C-0.063</td>
+                <td>R-15 continuous (R-15ci)</td>
+              </tr>
+              <tr>
+                <td><strong>Floors: Joist / Framing</strong></td>
+                <td class="table-highlight">U-0.027</td>
+                <td>R-38</td>
+              </tr>
+              <tr>
+                <td><strong>Unheated Slab-on-Grade</strong></td>
+                <td class="table-highlight">F-0.434</td>
+                <td>R-15 for 24" below perimeter</td>
+              </tr>
+              <tr>
+                <td><strong>Heated Slab-on-Grade</strong></td>
+                <td class="table-highlight">F-0.630</td>
+                <td>R-20 for 48" below + R-5 full under-slab</td>
+              </tr>
+              <tr>
+                <td><strong>Vertical Glazing (CZ6)</strong></td>
+                <td class="table-highlight">Fixed U-0.34 &bull; Operable U-0.41</td>
+                <td>All other vertical: U-0.27; Entrance doors: U-0.77</td>
+              </tr>
+              <tr>
+                <td><strong>Balcony / Parapet Thermal Breaks (<span class="font-mono">C402.2.8</span>)</strong></td>
+                <td colspan="2">Mandatory continuous R-3 insulation or minimum R-3 thermal break at penetrations.</td>
+              </tr>
+              <tr>
+                <td><strong>Air Barrier Whole-Building Testing (<span class="font-mono">C402.5.9</span>)</strong></td>
+                <td colspan="2">Max leakage <strong>&le; 0.40 cfm/ft² at 75 Pa</strong> (ASTM E779) for 25k–50k sq ft buildings &le; 75 ft.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer style="border-top: 1px solid var(--border-subtle); background: var(--bg-secondary); padding: 2.5rem 1.5rem; text-align: center; color: var(--text-faint); font-size: 0.8rem;">
+    <div style="max-width: 900px; margin: 0 auto; line-height: 1.7;">
+      <p style="margin-bottom: 0.5rem; color: var(--text-muted); font-weight: 600;">
+        NYStretch Energy Code 2020 &bull; Residential Provisions (IECC 2018 Overlay) &bull; Climate Zone 6 Technical Reference Guide
+      </p>
+      <p>
+        Extracted and synthesized directly from NYSERDA NYStretch Energy Code Version 1.0 (July 2019). Applicable to all residential jurisdictions in New York State designated in ASHRAE / IECC Climate Zone 6 adopting the NYStretch overlay.
+      </p>
+    </div>
+  </footer>
+
+  <!-- JavaScript for Interactive Filters & Pipe Calculator -->
+  <script>
+    // Pipe Table Data
+    const pipeTable = {
+      "0.25": { ozPerFt: 0.33, noLoop: 50, loop: 16, public: 6 },
+      "0.3125": { ozPerFt: 0.50, noLoop: 50, loop: 16, public: 4 },
+      "0.375": { ozPerFt: 0.75, noLoop: 50, loop: 16, public: 3 },
+      "0.5": { ozPerFt: 1.50, noLoop: 43, loop: 16, public: 2 },
+      "0.625": { ozPerFt: 2.00, noLoop: 32, loop: 12, public: 1 },
+      "0.75": { ozPerFt: 3.00, noLoop: 21, loop: 8, public: 0.5 },
+      "0.875": { ozPerFt: 4.00, noLoop: 16, loop: 6, public: 0.5 },
+      "1.0": { ozPerFt: 5.00, noLoop: 13, loop: 5, public: 0.5 },
+      "1.25": { ozPerFt: 8.00, noLoop: 8, loop: 3, public: 0.5 },
+      "1.5": { ozPerFt: 11.00, noLoop: 6, loop: 2, public: 0.5 },
+      "2.0": { ozPerFt: 18.00, noLoop: 4, loop: 1, public: 0.5 }
+    };
+
+    function runPipeCalc() {
+      const sizeKey = document.getElementById("pipeSize").value;
+      const configKey = document.getElementById("pipeConfig").value;
+      const lengthInput = parseFloat(document.getElementById("actualLength").value) || 0;
+
+      const data = pipeTable[sizeKey];
+      if (!data) return;
+
+      const maxLimit = data[configKey];
+      const volPerFt = data.ozPerFt;
+      const totalVolume = (lengthInput * volPerFt).toFixed(1);
+
+      document.getElementById("maxAllowedDisplay").innerText = maxLimit + " feet";
+      document.getElementById("pipeVolDisplay").innerText = totalVolume + " oz";
+
+      const badge = document.getElementById("pipeStatusBadge");
+      if (lengthInput <= maxLimit) {
+        badge.className = "result-badge badge-pass";
+        badge.innerHTML = `&#10003; COMPLIANT (&le; ${maxLimit} ft)`;
+      } else {
+        badge.className = "result-badge badge-fail";
+        badge.innerHTML = `&#10007; EXCEEDS LIMIT by ${(lengthInput - maxLimit).toFixed(1)} ft`;
+      }
+    }
+
+    // Filter Sections
+    function filterView(category) {
+      // update active button
+      const buttons = document.querySelectorAll("#section-pills .tab-pill");
+      buttons.forEach(b => b.classList.remove("active"));
+      event.target.classList.add("active");
+
+      const sections = document.querySelectorAll(".guide-section");
+      sections.forEach(sec => {
+        if (category === "all" || sec.getAttribute("data-cat") === category) {
+          sec.style.display = "block";
+        } else {
+          sec.style.display = "none";
+        }
+      });
+    }
+
+    // Live Search
+    function liveSearch() {
+      const query = document.getElementById("codeSearch").value.toLowerCase().trim();
+      const cards = document.querySelectorAll(".card, tr, .stat-card");
+
+      if (query === "") {
+        cards.forEach(c => c.style.opacity = "1");
+        return;
+      }
+
+      cards.forEach(c => {
+        const text = c.innerText.toLowerCase();
+        if (text.includes(query)) {
+          c.style.opacity = "1";
+        } else {
+          c.style.opacity = "0.2";
+        }
+      });
+    }
+
+    // Interactive Checklist
+    function toggleCheck(element) {
+      element.classList.toggle("checked");
+    }
+
+    function resetChecklist() {
+      const items = document.querySelectorAll(".checklist-item");
+      items.forEach(i => i.classList.remove("checked"));
+    }
+
+    // Init run
+    window.addEventListener("DOMContentLoaded", () => {
+      runPipeCalc();
+    });
+  </script>
+</body>
+</html>
