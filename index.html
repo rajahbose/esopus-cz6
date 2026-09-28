@@ -120,117 +120,12 @@
       letter-spacing: -0.03em;
       line-height: 1.2;
       color: var(--text-main);
-      margin-bottom: 1.15rem;
+      margin-bottom: 1.75rem;
     }
 
     .hero h1 .highlight-term {
       color: var(--text-secondary);
       font-weight: 400;
-    }
-
-    .hero-content-row {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 2.25rem;
-      margin-bottom: 2.25rem;
-    }
-
-    .hero-desc {
-      flex: 1 1 540px;
-      font-size: 0.98rem;
-      color: var(--text-secondary);
-      line-height: 1.7;
-      margin-bottom: 0;
-    }
-
-    /* AHJ (Authority Having Jurisdiction) Technical Card */
-    .ahj-card {
-      flex: 0 0 380px;
-      background: var(--bg-card);
-      border: 1px solid var(--border-medium);
-      border-left: 3px solid var(--info-blue);
-      border-radius: var(--radius-md);
-      padding: 0.95rem 1.2rem;
-      box-shadow: var(--shadow-sm);
-      transition: border-color 0.2s ease, transform 0.2s ease;
-    }
-
-    .ahj-card:hover {
-      border-color: var(--border-strong);
-      border-left-color: var(--info-blue);
-      transform: translateY(-1px);
-    }
-
-    .ahj-card-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.5rem;
-      margin-bottom: 0.55rem;
-    }
-
-    .ahj-card-label {
-      display: inline-flex;
-      align-items: center;
-      background: var(--bg-elevated);
-      border: 1px solid var(--border-strong);
-      color: var(--text-main);
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      font-weight: 700;
-      padding: 0.2rem 0.55rem;
-      border-radius: var(--radius-sm);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .ahj-zone-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-family: var(--font-mono);
-      font-size: 0.68rem;
-      font-weight: 600;
-      color: var(--info-blue);
-      letter-spacing: 0.03em;
-    }
-
-    .ahj-zone-badge::before {
-      content: "";
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: var(--info-blue);
-    }
-
-    .ahj-card-title {
-      font-size: 0.94rem;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-      color: var(--text-main);
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 0.45rem;
-      margin-bottom: 0.35rem;
-      line-height: 1.35;
-    }
-
-    .ahj-spec-tag {
-      font-family: var(--font-mono);
-      font-size: 0.68rem;
-      color: var(--text-muted);
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-
-    .ahj-card-sub {
-      font-size: 0.76rem;
-      color: var(--text-secondary);
-      line-height: 1.45;
-      letter-spacing: 0.01em;
     }
 
     .stats-matrix {
@@ -753,7 +648,7 @@
       .toolbar-bar, button {
         display: none !important;
       }
-      .card, .stat-box, .table-frame, .ahj-card {
+      .card, .stat-box, .table-frame {
         border: 1px solid #ccc !important;
         background: none !important;
         color: #000000 !important;
@@ -769,13 +664,6 @@
     }
 
     @media (max-width: 900px) {
-      .hero-content-row {
-        flex-direction: column;
-        gap: 1.25rem;
-      }
-      .ahj-card {
-        width: 100%;
-      }
       .toolbar-bar {
         flex-direction: column;
         align-items: stretch;
@@ -793,36 +681,14 @@
        ========================================================================== -->
   <div class="hero">
     <div class="hero-meta-strip">
-      <span>NYSERDA Standard 2020</span>
+      <span>IECC 2018 Overlay</span>
       <span class="divider-bar">&bull;</span>
-      <span>Part 3 Residential Provisions</span>
-      <span class="divider-bar">&bull;</span>
-      <span>ASHRAE 90.1 / IECC Chapter 4 [RE]</span>
+      <span>Town of Esopus / Ulster County Reference</span>
     </div>
     <h1>
       Residential Energy Code Technical Guide
       <span class="highlight-term">&bull; Climate Zone 6</span>
     </h1>
-    <div class="hero-content-row">
-      <p class="hero-desc">
-        An engineering and architectural synthesis of thermal envelope performance, condensation control under IBC/IRC, balanced heat recovery ventilation, enclosed conditioned ductwork, service water efficiency, and renewable readiness tailored for cold-climate jurisdictions in New York State.
-      </p>
-
-      <!-- AHJ Technical Card -->
-      <div class="ahj-card">
-        <div class="ahj-card-header">
-          <span class="ahj-card-label">AHJ</span>
-          <span class="ahj-zone-badge">Climate Zone 6</span>
-        </div>
-        <div class="ahj-card-title">
-          <span>NYStretch Energy Code 2020</span>
-          <span class="ahj-spec-tag">// Residential Spec</span>
-        </div>
-        <div class="ahj-card-sub">
-          IECC 2018 Overlay &bull; Town of Esopus / Ulster County Reference
-        </div>
-      </div>
-    </div>
 
     <!-- Key Metrics Matrix -->
     <div class="stats-matrix">
