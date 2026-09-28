@@ -99,15 +99,28 @@
     }
 
     .hero-meta-strip {
-      display: inline-flex;
+      display: flex;
       align-items: center;
-      gap: 0.65rem;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
       font-family: var(--font-mono);
       font-size: 0.74rem;
       color: var(--text-muted);
       text-transform: uppercase;
       letter-spacing: 0.08em;
       margin-bottom: 0.85rem;
+    }
+
+    .hero-meta-left, .hero-meta-right {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .hero-meta-right {
+      color: var(--text-secondary);
+      font-weight: 600;
     }
 
     .hero-meta-strip .divider-bar {
@@ -681,9 +694,14 @@
        ========================================================================== -->
   <div class="hero">
     <div class="hero-meta-strip">
-      <span>IECC 2018 Overlay</span>
-      <span class="divider-bar">&bull;</span>
-      <span>Town of Esopus / Ulster County Reference</span>
+      <div class="hero-meta-left">
+        <span>IECC 2018 Overlay</span>
+        <span class="divider-bar">&bull;</span>
+        <span>Town of Esopus / Ulster County Reference</span>
+      </div>
+      <div class="hero-meta-right">
+        <span>NYStretch Energy Code 2020</span>
+      </div>
     </div>
     <h1>
       Residential Energy Code Technical Guide
@@ -753,10 +771,11 @@
         <button class="filter-tab" onclick="filterView('hot-water')">Plumbing &amp; DHW</button>
         <button class="filter-tab" onclick="filterView('electrical')">Solar &amp; EVSE</button>
         <button class="filter-tab" onclick="filterView('passive-house')">Passive House</button>
+        <button class="filter-tab" onclick="filterView('pools')">Pools &amp; Barriers</button>
       </div>
       <div class="search-group">
         <svg class="search-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        <input type="text" id="codeSearch" class="search-input" placeholder="Search provisions (e.g., 'closed cell', 'R-25', 'HRV')..." oninput="liveSearch()">
+        <input type="text" id="codeSearch" class="search-input" placeholder="Search provisions (e.g., 'closed cell', 'R-25', 'HRV', 'barrier')..." oninput="liveSearch()">
       </div>
     </div>
 
@@ -1489,7 +1508,167 @@
     </section>
 
     <!-- ==========================================================================
-         SECTION 8: INTERACTIVE DESIGN TOOLS & CZ6 VERIFIERS
+         SECTION 8: SWIMMING POOL & SPA SAFETY BARRIERS (NYS & ESOPUS)
+         ========================================================================== -->
+    <section id="pool-barriers" class="guide-section" data-cat="pools">
+      <div class="section-head">
+        <div>
+          <div class="section-citation">RCNYS Appendix G &bull; 2020 Uniform Code of NYS &bull; 2018 ISPSC Section 305 &bull; Town of Esopus Ch. 123</div>
+          <h2 class="section-title">Residential Swimming Pool &amp; Spa Barrier Requirements</h2>
+        </div>
+        <span class="badge-semantic badge-mandatory">NYS Life Safety Mandate</span>
+      </div>
+
+      <div class="card" style="border-left: 3px solid var(--warn-amber); margin-bottom: 1.5rem;">
+        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem;">
+          <span class="badge-semantic badge-warn" style="font-size: 0.7rem;">Code Scope Separation</span>
+          <span style="font-size: 0.82rem; font-weight: 700; color: var(--text-main);">Energy Code vs. Physical Life Safety Enclosure Standards</span>
+        </div>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">
+          While <strong>NYStretch 2020</strong> strictly governs thermal efficiency (pool heaters require accessible shut-off switches and vapor-retardant pool covers under base <strong>2018 IECC &sect;R403.10</strong>), physical swimming pool barriers, self-closing gates, dwelling egress alarms, and anti-entrapment drains are legally mandated under the <strong>Residential Code of New York State (RCNYS Appendix G)</strong>, the <strong>2020 Uniform Code of New York State (incorporating 2018 ISPSC Section 305)</strong>, <strong>NYS Executive Law &sect; 378(14)</strong>, and the <strong>Town of Esopus Town Code (&sect; 123-13 / &sect; 123-22)</strong>.
+        </p>
+      </div>
+
+      <!-- Technical Dimensional Standards Table -->
+      <div class="card" style="margin-bottom: 1.5rem;">
+        <div class="card-title-row">
+          <span class="card-heading">Mandatory Pool Barrier Dimensional Specifications</span>
+          <span class="badge-semantic badge-code">ISPSC &sect;305 &bull; RCNYS &sect;AG105</span>
+        </div>
+        <div class="card-subtext">Dimensional parameters for fences, walls, screen enclosures, and barrier assemblies.</div>
+
+        <div class="table-frame">
+          <table>
+            <thead>
+              <tr>
+                <th>Barrier Component</th>
+                <th>Prescriptive Code Requirement</th>
+                <th>Standard &amp; Statutory Citation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Minimum Barrier Height</strong></td>
+                <td class="val-mono val-highlight">&ge; 48 inches (1219 mm)</td>
+                <td>Measured on side facing away from pool (RCNYS AG105.2 / ISPSC 305.2.1)</td>
+              </tr>
+              <tr>
+                <td><strong>Maximum Ground Clearance</strong></td>
+                <td class="val-mono">&le; 2 inches (51 mm)</td>
+                <td>2" over grade/turf; max 4" over concrete/paved apron (ISPSC 305.2.2)</td>
+              </tr>
+              <tr>
+                <td><strong>Opening Limitation (Sphere Test)</strong></td>
+                <td class="val-mono val-warn">&le; 4 inches (102 mm) max</td>
+                <td>4-inch diameter sphere cannot pass through any opening or slat (ISPSC 305.2.3)</td>
+              </tr>
+              <tr>
+                <td><strong>Horizontal Rail Spacing (&lt; 45")</strong></td>
+                <td class="val-mono">&le; 1.75 inches vertical gap</td>
+                <td>Rails on swimming side; vertical spacing &le; 1.75" to prevent footholds (ISPSC 305.2.5)</td>
+              </tr>
+              <tr>
+                <td><strong>Horizontal Rail Spacing (&ge; 45")</strong></td>
+                <td class="val-mono">&le; 4.0 inches vertical gap</td>
+                <td>When horizontal members &ge; 45" apart, vertical spacing up to 4" allowed (ISPSC 305.2.6)</td>
+              </tr>
+              <tr>
+                <td><strong>Chain Link Fence Mesh Size</strong></td>
+                <td class="val-mono">&le; 2.25 inches square</td>
+                <td>If &gt; 1.25", must include privacy slats reducing openings to &le; 1.75" (ISPSC 305.2.7)</td>
+              </tr>
+              <tr>
+                <td><strong>Pedestrian Access Gates</strong></td>
+                <td class="val-mono val-highlight">Outward-swinging, self-closing &amp; self-latching</td>
+                <td>Must swing away from pool; latch release &ge; 54" or pool-side shielded (ISPSC 305.3)</td>
+              </tr>
+              <tr>
+                <td><strong>Dwelling Wall as Barrier</strong></td>
+                <td class="val-mono val-warn">UL 2017 Listed Audible Alarm</td>
+                <td>Mandatory 85 dBA alarm on all doors/operable windows with direct pool access (RCNYS AG105.2)</td>
+              </tr>
+              <tr>
+                <td><strong>In-Pool Water Alarm (NYS Law)</strong></td>
+                <td class="val-mono val-highlight">ASTM F2208 Certified</td>
+                <td>Mandatory for every pool in NYS; detects &ge; 15 lbs entry; dual siren (Exec Law &sect;378(14))</td>
+              </tr>
+              <tr>
+                <td><strong>Suction Entrapment Avoidance</strong></td>
+                <td class="val-mono">ANSI/APSP-16 &bull; Dual Drains / SVRS</td>
+                <td>Anti-vortex drain covers &bull; &ge; 3 ft dual drain separation or SVRS (VGB Act / ISPSC 310)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Detail Architecture Cards -->
+      <div class="grid-2">
+        <!-- Card 1: Fencing & Gate Mechanics -->
+        <div class="card">
+          <div class="card-title-row">
+            <span class="card-heading">1. Fence &amp; Gate Engineering</span>
+            <span class="badge-semantic badge-neutral">ISPSC &sect;305.3</span>
+          </div>
+          <div class="card-subtext">Access gate latching geometry, outward swing, and anti-climbing rules.</div>
+          <ul style="color: var(--text-secondary); padding-left: 1.15rem; font-size: 0.85rem; line-height: 1.7;">
+            <li><strong>Outward Swing Direction:</strong> All pedestrian access gates must open outward, away from the water. Inward-swinging gates are strictly prohibited.</li>
+            <li><strong>Self-Closing &amp; Self-Latching:</strong> Gates must automatically close and latch from any open position, including rested open just 1 inch.</li>
+            <li><strong>Latch Release Height:</strong> If latch release is &ge; 54" above grade, it may face outward. If latch release is &lt; 54", it must be mounted on the pool-side at least 3" below the top of gate, and no opening &gt; 0.5" is permitted within 18" of release.</li>
+            <li><strong>Locking Mandate:</strong> Gate must be equipped to accommodate a padlock or integrated keyed cylinder.</li>
+          </ul>
+        </div>
+
+        <!-- Card 2: Direct Dwelling Egress Alarms -->
+        <div class="card">
+          <div class="card-title-row">
+            <span class="card-heading">2. Dwelling Access Door &amp; Window Alarms</span>
+            <span class="badge-semantic badge-warn">RCNYS &sect;AG105.2(9)</span>
+          </div>
+          <div class="card-subtext">Life safety rules when exterior house walls serve as part of the pool barrier.</div>
+          <ul style="color: var(--text-secondary); padding-left: 1.15rem; font-size: 0.85rem; line-height: 1.7;">
+            <li><strong>Scope:</strong> Applies to all doors and operable windows (with sills &lt; 48" above floor) providing direct access from living space to pool patio.</li>
+            <li><strong>UL 2017 Listing:</strong> Alarms must be listed and labeled in accordance with UL 2017. Sounds immediately when door or screen is opened.</li>
+            <li><strong>Acoustic Rating:</strong> Must produce a minimum sound pressure rating of <strong>85 dBA at 10 feet</strong>, distinctly recognizable from smoke detectors.</li>
+            <li><strong>Momentary Bypass:</strong> Touch pad or switch must be located at least <strong>54 inches above the finished floor</strong>; bypass duration cannot exceed 15 seconds.</li>
+            <li><strong>Alternative:</strong> Motorized powered safety cover complying with <strong>ASTM F1346</strong>.</li>
+          </ul>
+        </div>
+
+        <!-- Card 3: In-Pool Surface Alarms -->
+        <div class="card">
+          <div class="card-title-row">
+            <span class="card-heading">3. Mandatory NYS In-Pool Alarms</span>
+            <span class="badge-semantic badge-pass">Exec Law &sect;378(14)</span>
+          </div>
+          <div class="card-subtext">Statutory New York State mandate for all residential swimming pools.</div>
+          <ul style="color: var(--text-secondary); padding-left: 1.15rem; font-size: 0.85rem; line-height: 1.7;">
+            <li><strong>Statewide Mandate:</strong> Enacted by the New York State Legislature under Executive Law &sect; 378(14) and RCNYS &sect;AG105.7. Applicable to all new, altered, or retrofitted pools.</li>
+            <li><strong>ASTM F2208 Certification:</strong> Device must be tested and certified to ASTM F2208 Standard Specification for Pool Alarms.</li>
+            <li><strong>Sensitivity:</strong> Capable of detecting accidental entry of an object or child weighing <strong>15 pounds or greater</strong> at any point on the water surface.</li>
+            <li><strong>Dual Annunciation:</strong> Must emit an audible sound &ge; 85 dBA poolside <em>and</em> transmit to a wireless receiver inside the residence.</li>
+          </ul>
+        </div>
+
+        <!-- Card 4: Town of Esopus Local Law -->
+        <div class="card">
+          <div class="card-title-row">
+            <span class="card-heading">4. Town of Esopus Local Law</span>
+            <span class="badge-semantic badge-cz6">Town Code &sect;123-13</span>
+          </div>
+          <div class="card-subtext">Local zoning setbacks, electrical clearances, and building permit filings.</div>
+          <ul style="color: var(--text-secondary); padding-left: 1.15rem; font-size: 0.85rem; line-height: 1.7;">
+            <li><strong>Permit Filing:</strong> Building permit application required from the Town of Esopus Building Department prior to excavation, grading, or pool installation.</li>
+            <li><strong>Zoning Setbacks:</strong> Swimming pools are classified as accessory structures; must maintain prescribed side and rear yard zoning setbacks (not permitted in front yards).</li>
+            <li><strong>Electrical Overhead Lines (NEC &sect;680):</strong> Minimum <strong>22.5 feet vertical clearance</strong> required for overhead utility power lines above maximum water level and observation/diving platforms.</li>
+            <li><strong>Above-Ground Pools:</strong> Walls &ge; 48" high qualify as barrier only if ladder/steps are retractable, lockable, or enclosed by a 48" code fence.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 9: INTERACTIVE DESIGN TOOLS & CZ6 VERIFIERS
          ========================================================================== -->
     <section id="interactive-tools" class="guide-section" data-cat="tools">
       <div class="section-head">
@@ -1625,13 +1804,21 @@
                 <div class="check-meta">Section R404.2 &bull; Appendix RA compliance &amp; dedicated 240V 40A parking conduit.</div>
               </div>
             </div>
+
+            <div class="checklist-row" onclick="toggleCheck(this)">
+              <div class="check-box-square">&check;</div>
+              <div>
+                <div class="check-title">Pool Barrier &amp; In-Pool Alarm (RCNYS App. G &amp; NYS Exec. Law &sect; 378)</div>
+                <div class="check-meta">Min 48" barrier height, self-closing/latching outward gates, and ASTM F2208 in-pool alarm.</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ==========================================================================
-         SECTION 9: COMMERCIAL MULTIFAMILY GROUP R COMPARISON
+         SECTION 10: COMMERCIAL MULTIFAMILY GROUP R COMPARISON
          ========================================================================== -->
     <section id="commercial-note" class="guide-section" data-cat="envelope">
       <div class="section-head">
