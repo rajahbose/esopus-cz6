@@ -89,134 +89,6 @@
     }
 
     /* ==========================================================================
-       CLEAN ARCHITECTURAL HEADER
-       ========================================================================== */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(12, 13, 16, 0.94);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border-subtle);
-    }
-
-    .header-inner {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 0.75rem 1.75rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.5rem;
-    }
-
-    .brand-group {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .brand-badge {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--bg-elevated);
-      border: 1px solid var(--border-medium);
-      color: var(--text-main);
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      font-weight: 700;
-      padding: 0.35rem 0.55rem;
-      border-radius: var(--radius-sm);
-      letter-spacing: 0.05em;
-    }
-
-    .brand-meta {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .brand-title {
-      font-size: 0.95rem;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-      color: var(--text-main);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .brand-title-tag {
-      font-family: var(--font-mono);
-      font-size: 0.68rem;
-      color: var(--text-muted);
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .brand-sub {
-      font-size: 0.72rem;
-      color: var(--text-muted);
-      font-weight: 400;
-      letter-spacing: 0.01em;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 0.25rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-size: 0.8rem;
-      font-weight: 500;
-      padding: 0.4rem 0.65rem;
-      border-radius: var(--radius-sm);
-      transition: all 0.15s ease;
-      border: 1px solid transparent;
-      white-space: nowrap;
-    }
-
-    .nav-links a:hover {
-      color: var(--text-main);
-      background: var(--bg-card);
-      border-color: var(--border-subtle);
-    }
-
-    .header-status {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .cz-status-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      padding: 0.35rem 0.75rem;
-      border-radius: var(--radius-sm);
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      font-weight: 600;
-      color: var(--text-secondary);
-    }
-
-    .cz-status-pill .indicator-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--info-blue);
-    }
-
-    /* ==========================================================================
        HERO & EXECUTIVE STATS
        ========================================================================== */
     .hero {
@@ -248,7 +120,7 @@
       letter-spacing: -0.03em;
       line-height: 1.2;
       color: var(--text-main);
-      margin-bottom: 1rem;
+      margin-bottom: 1.15rem;
     }
 
     .hero h1 .highlight-term {
@@ -256,12 +128,109 @@
       font-weight: 400;
     }
 
-    .hero p {
+    .hero-content-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 2.25rem;
+      margin-bottom: 2.25rem;
+    }
+
+    .hero-desc {
+      flex: 1 1 540px;
       font-size: 0.98rem;
       color: var(--text-secondary);
-      max-width: 860px;
       line-height: 1.7;
-      margin-bottom: 2rem;
+      margin-bottom: 0;
+    }
+
+    /* AHJ (Authority Having Jurisdiction) Technical Card */
+    .ahj-card {
+      flex: 0 0 380px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-medium);
+      border-left: 3px solid var(--info-blue);
+      border-radius: var(--radius-md);
+      padding: 0.95rem 1.2rem;
+      box-shadow: var(--shadow-sm);
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .ahj-card:hover {
+      border-color: var(--border-strong);
+      border-left-color: var(--info-blue);
+      transform: translateY(-1px);
+    }
+
+    .ahj-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-bottom: 0.55rem;
+    }
+
+    .ahj-card-label {
+      display: inline-flex;
+      align-items: center;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-strong);
+      color: var(--text-main);
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.2rem 0.55rem;
+      border-radius: var(--radius-sm);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .ahj-zone-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: var(--info-blue);
+      letter-spacing: 0.03em;
+    }
+
+    .ahj-zone-badge::before {
+      content: "";
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--info-blue);
+    }
+
+    .ahj-card-title {
+      font-size: 0.94rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--text-main);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.45rem;
+      margin-bottom: 0.35rem;
+      line-height: 1.35;
+    }
+
+    .ahj-spec-tag {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .ahj-card-sub {
+      font-size: 0.76rem;
+      color: var(--text-secondary);
+      line-height: 1.45;
+      letter-spacing: 0.01em;
     }
 
     .stats-matrix {
@@ -345,7 +314,7 @@
       gap: 0.85rem;
       margin-bottom: 2.5rem;
       position: sticky;
-      top: 3.8rem;
+      top: 0.75rem;
       z-index: 90;
       box-shadow: var(--shadow-md);
     }
@@ -422,7 +391,7 @@
        ========================================================================== */
     .guide-section {
       margin-bottom: 3.5rem;
-      scroll-margin-top: 6.5rem;
+      scroll-margin-top: 4.5rem;
     }
 
     .section-head {
@@ -781,10 +750,10 @@
         background: #ffffff !important;
         color: #000000 !important;
       }
-      header, .toolbar-bar, button {
+      .toolbar-bar, button {
         display: none !important;
       }
-      .card, .stat-box, .table-frame {
+      .card, .stat-box, .table-frame, .ahj-card {
         border: 1px solid #ccc !important;
         background: none !important;
         color: #000000 !important;
@@ -800,8 +769,12 @@
     }
 
     @media (max-width: 900px) {
-      .nav-links {
-        display: none;
+      .hero-content-row {
+        flex-direction: column;
+        gap: 1.25rem;
+      }
+      .ahj-card {
+        width: 100%;
       }
       .toolbar-bar {
         flex-direction: column;
@@ -816,45 +789,8 @@
 <body>
 
   <!-- ==========================================================================
-       CLEAN ARCHITECTURAL HEADER
+       HERO / ARCHITECTURAL OVERVIEW
        ========================================================================== -->
-  <header>
-    <div class="header-inner">
-      <a href="#" class="brand-group">
-        <span class="brand-badge">CZ6</span>
-        <div class="brand-meta">
-          <div class="brand-title">
-            <span>NYStretch Energy Code 2020</span>
-            <span class="brand-title-tag">// Residential Spec</span>
-          </div>
-          <span class="brand-sub">IECC 2018 Overlay &bull; Town of Esopus / Ulster County Reference</span>
-        </div>
-      </a>
-
-      <nav class="nav-links">
-        <a href="#compliance-paths">Compliance</a>
-        <a href="#envelope">Envelope</a>
-        <a href="#condensation">Condensation Control</a>
-        <a href="#mechanical">HVAC / HRV</a>
-        <a href="#hot-water">Plumbing &amp; DHW</a>
-        <a href="#electrical">Solar &amp; EV</a>
-        <a href="#passive-house">Passive House</a>
-        <a href="#interactive-tools">Tools</a>
-      </nav>
-
-      <div class="header-status">
-        <div class="cz-status-pill">
-          <span class="indicator-dot"></span>
-          <span>CLIMATE ZONE 6 (COLD)</span>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- ==========================================================================
-       HERO / ARCHITECTURAL MONOGRAPH OVERVIEW
-       ========================================================================== */
-  -->
   <div class="hero">
     <div class="hero-meta-strip">
       <span>NYSERDA Standard 2020</span>
@@ -867,9 +803,26 @@
       Residential Energy Code Technical Guide
       <span class="highlight-term">&bull; Climate Zone 6</span>
     </h1>
-    <p>
-      An engineering and architectural synthesis of thermal envelope performance, condensation control under IBC/IRC, balanced heat recovery ventilation, enclosed conditioned ductwork, service water efficiency, and renewable readiness tailored for cold-climate jurisdictions in New York State.
-    </p>
+    <div class="hero-content-row">
+      <p class="hero-desc">
+        An engineering and architectural synthesis of thermal envelope performance, condensation control under IBC/IRC, balanced heat recovery ventilation, enclosed conditioned ductwork, service water efficiency, and renewable readiness tailored for cold-climate jurisdictions in New York State.
+      </p>
+
+      <!-- AHJ Technical Card -->
+      <div class="ahj-card">
+        <div class="ahj-card-header">
+          <span class="ahj-card-label">AHJ</span>
+          <span class="ahj-zone-badge">Climate Zone 6</span>
+        </div>
+        <div class="ahj-card-title">
+          <span>NYStretch Energy Code 2020</span>
+          <span class="ahj-spec-tag">// Residential Spec</span>
+        </div>
+        <div class="ahj-card-sub">
+          IECC 2018 Overlay &bull; Town of Esopus / Ulster County Reference
+        </div>
+      </div>
+    </div>
 
     <!-- Key Metrics Matrix -->
     <div class="stats-matrix">
